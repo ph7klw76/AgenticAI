@@ -1,4 +1,5 @@
-# Getting up Gemma4
+# Getting up Gemma4 with vLLM Support
+
 You need to open a huggingface account
 
 To get your token:
@@ -209,5 +210,18 @@ unset PYTHONPATH
 export PYTHONNOUSERSITE=1
 
 python test_gemma4.py
-111
+```
+
+
+To install vLLM in the Gemma environment
+
+```text
+conda activate gemma4
+cd /home/user/woon/scr
+git clone https://github.com/vllm-project/vllm.git
+cd vllm
+python use_existing_torch.py
+uv pip install -r requirements/build.txt
+uv pip install --no-build-isolation -e .
+```
 
